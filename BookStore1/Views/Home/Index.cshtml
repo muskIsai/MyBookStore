@@ -1,0 +1,33 @@
+﻿@{
+      ViewBag.Title = "My book store 1";
+    //Layout = null;
+}
+
+<!DOCTTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <div>
+        <h3>Venda de livros</h3>
+        <table>
+            <tr>
+                <td><p>Название книг</p></td>
+                <td><p>Автор</p></td>
+                <td><p>Цена</p></td>
+            </tr>
+            
+            @foreach (var b in ViewBag.Books) //Obs: ViewBag.Books - xta com ERRO
+            {
+                <tr>
+                    <td>@b.Name</td>
+                    <td>@b.Author</td>
+                    <td>@b.Price</td>
+                    <td><p><a href="Home/Buy/@b.Id">Купить</a></p></td>
+                </tr>
+            } 
+        </table>
+    </div>
+</body>
+</html>
