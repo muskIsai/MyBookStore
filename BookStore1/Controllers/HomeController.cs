@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BookStore1.Models;
+using System.Data.Entity;
+using System.Data.SqlClient;
 
 namespace BookStore1.Controllers
 {
@@ -33,14 +35,14 @@ namespace BookStore1.Controllers
         }
 
         [HttpPost]
-        public string Buy(Purchase purshase)
+        public string Buy(Purchase purchase)
         {
-            purshase.Date = DateTime.Now;
+            purchase.Date = DateTime.Now;
             //Adicionar informações padronizada da compra ao BD
-            db.Purchases.Add(purshase);
+            db.Purchases.Add(purchase);
             //Guardar no BD tdas alteracoes
             db.SaveChanges();
-            return "Obrigado " + purshase.Person + "pela compra";
+            return "Obrigado " + purchase.Person + "pela compra";
         }
     }
 }

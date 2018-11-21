@@ -4,6 +4,7 @@ using System.Linq;
 //using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Data.Entity;
+using System.Data.SqlClient;
 
 
 namespace BookStore1.Models
